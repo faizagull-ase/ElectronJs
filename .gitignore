@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+out
+release
+*.tsbuildinfo
+
+# Logs and caches
+*.log*
+.eslintcache
+.cache
+.vite
+coverage
+
+# Environment files / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files (shared .vscode config is kept)
+.idea
+*.swp
