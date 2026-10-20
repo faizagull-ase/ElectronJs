@@ -19,16 +19,29 @@ function CreateWindow(): void {
 }
 
 app.whenReady().then(() => {
+  ipcMain.on('ondragstart', (event, fileName: string) => {
+  const filePath = path.join(app.getAppPath(), fileName);
+  const iconPath = path.join(app.getAppPath(), 'resources', 'drag-icon.png');
+
+  event.sender.startDrag({
+    file: filePath,
+    icon: iconPath
+  });
+});
+
   ipcMain.handle('notification:show', () => {
     new Notification({
       title: 'My electron App',
       body: 'Hello from faiza!'
-    }).show()
+    }).show();
+    return {
+      success: true,
+      message: 'Notification displayed successfully'
+    };
   })
 
   CreateWindow()
 
- 
 })
 
 app.on('window-all-closed', () => {

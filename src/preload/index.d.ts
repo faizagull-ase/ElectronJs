@@ -1,5 +1,6 @@
 interface ElectronAPI {
   shownotification: () => Promise<void>
+  startDrag : (string)=>void
 }
 
 declare global {
