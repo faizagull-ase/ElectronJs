@@ -1,13 +1,13 @@
 import React from 'react'
-
+import DragDrop from './components/DragDrop'
+import Notification from './components/Notification'
 const App = () : React.JSX.Element => {
-  const shownotification = async () =>{
-    await window.ElectronAPI.shownotification();
-  }
+
   return (
-    <button onClick={shownotification}>
-        Show notifications
-    </button>
+    <>
+    <Notification/>
+    <DragDrop/>
+    </>
   )
 }
 
